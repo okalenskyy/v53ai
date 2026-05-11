@@ -108,7 +108,6 @@ const NAV_LINKS: [string, string][] = [
   ['#services', 'Services'],
   ['#about', 'About'],
   ['#faq', 'FAQ'],
-  ['#contact', 'Contact Us'],
 ]
 
 export default function Home() {
