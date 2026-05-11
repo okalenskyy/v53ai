@@ -16,16 +16,16 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
-// ─── REPLACE: update title, description, and favicon paths ───────────────────
 export const metadata: Metadata = {
-  title: '[SITE TITLE] — [TAGLINE]',
-  description: '[One sentence describing the site for search engines and social sharing.]',
-  icons: { icon: '/brand_assets/favicon.svg', shortcut: '/brand_assets/favicon.ico' },
+  title: 'V53 AI Cluster — Next-generation AI compute infrastructure for Europe',
+  description:
+    'V53 is a next-generation AI Compute Cluster in the Groningen region, designed to become a critical backbone of Europe’s digital economy. MVP compute go-live 2027.',
+  icons: { icon: '/brand_assets/favicon.png', shortcut: '/brand_assets/favicon.ico' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
         {children}
       </body>

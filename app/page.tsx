@@ -2,20 +2,95 @@
 
 import { useEffect, useState } from 'react'
 
+const SERVICES: { num: string; title: string; meta: string; desc: string; tag: string }[] = [
+  {
+    num: '01',
+    title: 'AI Training Compute',
+    meta: 'GPU clusters · multi-node',
+    desc:
+      'Dense GPU capacity for training foundation models, fine-tuning LLMs and running large-scale deep-learning workloads. Reserved nodes, predictable performance, transparent utilisation reporting from day one.',
+    tag: 'Train · Fine-tune · Iterate',
+  },
+  {
+    num: '02',
+    title: 'High-Performance Computing',
+    meta: 'HPC · research & enterprise',
+    desc:
+      'Industrial-grade HPC capacity for scientific computing, simulation, computational chemistry, financial modelling and any workload that has outgrown a standard cloud quota. Built to run hot, designed to stay stable.',
+    tag: 'Simulate · Solve · Scale',
+  },
+  {
+    num: '03',
+    title: 'AI Inference at Scale',
+    meta: 'Low-latency · production',
+    desc:
+      'Production inference for chat, search, agents and decision systems. Tuned for latency, cost-per-token and sustained throughput, with capacity that grows with your traffic instead of throttling it.',
+    tag: 'Serve · Scale · Save',
+  },
+  {
+    num: '04',
+    title: 'Sovereign AI Hosting',
+    meta: 'EU · GDPR-native',
+    desc:
+      'Compute and data that never leave Europe. Sovereign infrastructure for regulated industries — finance, healthcare, public sector, defence — where jurisdiction, lineage and audit trail are not negotiable.',
+    tag: 'Sovereignty · Residency · Audit',
+  },
+  {
+    num: '05',
+    title: 'Colocation & Hybrid',
+    meta: 'Bring-your-own · custom',
+    desc:
+      'Place your own hardware inside an AI-grade facility. Direct power, dense cooling, high-bandwidth interconnect, plus a clean handoff into the wider V53 fabric when you need to burst beyond your own racks.',
+    tag: 'Co-locate · Connect · Extend',
+  },
+  {
+    num: '06',
+    title: 'Capacity Reservation',
+    meta: 'Pre-2027 · forward-booked',
+    desc:
+      'Secure dedicated AI compute ahead of MVP go-live in 2027. Forward contracts, ramp schedules and engineering support so your roadmap is not gated by capacity that has not been built yet.',
+    tag: 'Reserve · Ramp · Launch',
+  },
+]
+
+const NAV_LINKS: [string, string][] = [
+  ['#services', 'Services'],
+  ['#about', 'About'],
+  ['#contact', 'Contact Us'],
+]
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 32)
+    const onScroll = () => setScrolled(window.scrollY > 64)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
+  useEffect(() => {
     const io = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
-          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target) }
+          if (e.isIntersecting) {
+            e.target.classList.add('visible')
+            io.unobserve(e.target)
+          }
         }),
       { threshold: 0.1, rootMargin: '0px 0px -48px 0px' }
     )
@@ -24,379 +99,415 @@ export default function Home() {
   }, [])
 
   const goTo = (id: string) => {
+    setMenuOpen(false)
     const el = document.querySelector(id)
-    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 76, behavior: 'smooth' })
+    if (el) {
+      window.scrollTo({
+        top: el.getBoundingClientRect().top + window.scrollY - 76,
+        behavior: 'smooth',
+      })
+    }
   }
 
-  // REPLACE: point to the actual application form / booking link
-  const apply = () => { window.open('https://[APPLICATION-FORM-URL]', '_blank') }
+  // Placeholder action for the Contact Us button — wire to booking / form later.
+  const requestContact = () => goTo('#contact')
 
   return (
     <>
       {/* ══════════════════ NAV ══════════════════ */}
-      <nav className={`nav${scrolled ? ' is-scrolled' : ''}`} aria-label="Main navigation">
-        {/* REPLACE: swap logo file — place logo in /public/brand_assets/ */}
-        <a href="#" className="nav__logo" aria-label="[SITE NAME] home"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand_assets/logo-white.png" alt="[SITE NAME]" width={140} height={22} />
+      <nav
+        className={`nav${scrolled || menuOpen ? ' is-scrolled' : ' is-hero'}${menuOpen ? ' is-menu-open' : ''}`}
+        aria-label="Main navigation"
+      >
+        <a
+          href="#"
+          className="nav__brand"
+          aria-label="V53 AI Cluster — home"
+          onClick={(e) => {
+            e.preventDefault()
+            setMenuOpen(false)
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+        >
+          <span className="nav__logo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/brand_assets/logo_V53_dark.png" alt="V53 AI Cluster" />
+          </span>
         </a>
 
         <ul className="nav__links" role="list">
-          {([
-            ['#how-it-works', 'How it works'],
-            ['#cost',         'Cost'],
-            ['#about',        'About'],
-            ['#faq',          'FAQ'],
-          ] as const).map(([href, label]) => (
+          {NAV_LINKS.map(([href, label]) => (
             <li key={href}>
-              <a href={href} onClick={(e) => { e.preventDefault(); goTo(href) }}>{label}</a>
+              <a
+                href={href}
+                onClick={(e) => {
+                  e.preventDefault()
+                  goTo(href)
+                }}
+              >
+                {label}
+              </a>
             </li>
           ))}
         </ul>
 
-        <button className="nav__cta" onClick={apply} aria-label="Apply now">
-          Apply
+        <button
+          className="nav__cta"
+          onClick={() => goTo('#contact')}
+          aria-label="Call us — jump to contact"
+        >
+          Call us
+          <span className="nav__cta-arrow" aria-hidden="true">
+            →
+          </span>
+        </button>
+
+        <button
+          type="button"
+          className={`nav__burger${menuOpen ? ' is-open' : ''}`}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
         </button>
       </nav>
 
+      {/* Mobile menu panel */}
+      <div
+        id="mobile-menu"
+        className={`mobile-menu${menuOpen ? ' is-open' : ''}`}
+        aria-hidden={!menuOpen}
+      >
+        <div className="mobile-menu__backdrop" onClick={() => setMenuOpen(false)} />
+        <div className="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+          <ul className="mobile-menu__links" role="list">
+            {NAV_LINKS.map(([href, label], i) => (
+              <li key={href} style={{ transitionDelay: `${menuOpen ? 0.08 + i * 0.04 : 0}s` }}>
+                <a
+                  href={href}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    goTo(href)
+                  }}
+                >
+                  <span className="mobile-menu__link-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span>{label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="mobile-menu__footer">
+            <button
+              className="btn btn--primary mobile-menu__cta"
+              onClick={() => goTo('#contact')}
+            >
+              Call us
+              <span className="btn__arrow" aria-hidden="true">
+                →
+              </span>
+            </button>
+            <a className="mobile-menu__email" href="mailto:call@v53ai.eu">
+              call@v53ai.eu
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* ══════════════════ HERO ══════════════════ */}
       <section className="hero" aria-labelledby="hero-heading">
-        <div className="hero__glow-b" aria-hidden="true" />
-        <div className="hero__glow-a" aria-hidden="true" />
-        {/* Optional: keep or remove the geometric background mark */}
-        <svg className="hero__bg-mark" aria-hidden="true"
-          viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <polygon points="43,2 61,2 99,98 81,98" fill="#ffffff" />
-          <polygon points="38,10 4,94 70,94" fill="#ED1C24" />
-        </svg>
-        <div className="hero__rule" aria-hidden="true" />
+        <div className="hero__top-stripe" aria-hidden="true" />
+        <div className="hero__grid" aria-hidden="true" />
+        <div className="hero__racks" aria-hidden="true" />
 
         <div className="hero__content">
-          {/* REPLACE: program category / eyebrow label */}
           <div className="hero__eyebrow hero-anim ha-1" aria-hidden="true">
             <span className="hero__eyebrow-line" />
-            [PROGRAM CATEGORY]
+            V53 AI Cluster · Groningen, NL
           </div>
 
-          {/* REPLACE: main headline — 3-4 lines, accent on the key phrase */}
           <h1 className="hero__headline hero-anim ha-2" id="hero-heading">
-            [Headline]<br />
-            [line two.]<br />
-            <span className="accent">[Accented]</span><br />
-            <span className="accent">[line.]</span>
+            Next-generation{' '}
+            <span className="accent">AI compute</span> for Europe&apos;s digital economy.
           </h1>
 
-          {/* REPLACE: one or two sentence description */}
           <p className="hero__sub hero-anim ha-3">
-            [One sentence that says what Ship Week is and who it is for.]
+            V53 is an industrial-grade AI Compute Cluster purpose-built for large-scale
+            AI and high-performance workloads. Strategically located in the Groningen
+            region, designed to be a critical backbone for enterprise AI adoption,
+            data-driven innovation and economic competitiveness.
           </p>
 
           <div className="hero__actions hero-anim ha-4">
-            <button className="btn btn--primary" onClick={apply} aria-label="Apply now">
-              Apply now
+            <button
+              className="btn btn--primary"
+              onClick={requestContact}
+              aria-label="Call us"
+            >
+              Call us
+              <span className="btn__arrow" aria-hidden="true">
+                →
+              </span>
             </button>
-            <button className="btn btn--ghost" onClick={() => goTo('#how-it-works')} aria-label="See how it works">
-              How it works
+            <button
+              className="btn btn--ghost-dark"
+              onClick={() => goTo('#services')}
+              aria-label="Explore services"
+            >
+              Explore services
             </button>
           </div>
 
-          {/* REPLACE: 3 stats meaningful to this program */}
           <div className="hero__stats hero-anim ha-5" aria-label="At a glance">
             <div className="hero__stat">
-              <div className="hero__stat-num">[N]</div>
-              <div className="hero__stat-label">[Stat label]</div>
+              <div className="hero__stat-num">2027</div>
+              <div className="hero__stat-label">MVP compute go-live</div>
             </div>
             <div className="hero__stat">
-              <div className="hero__stat-num">[N]</div>
-              <div className="hero__stat-label">[Stat label]</div>
+              <div className="hero__stat-num">Groningen</div>
+              <div className="hero__stat-label">Strategic EU location</div>
             </div>
             <div className="hero__stat">
-              <div className="hero__stat-num">[N]</div>
-              <div className="hero__stat-label">[Stat label]</div>
+              <div className="hero__stat-num">EU-sovereign</div>
+              <div className="hero__stat-label">GDPR-native by design</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════ WHAT IT IS ══════════════════ */}
-      {/* Nav anchor: "How it works" points here */}
-      <section className="what-it-is" id="how-it-works" aria-labelledby="what-heading">
-        <div className="what-it-is__inner">
-          <div>
-            <p className="section-label reveal">What Ship Week actually is</p>
-            {/* REPLACE: short punchy heading */}
-            <h2 className="section-title reveal rd-1" id="what-heading">
-              [Heading that<br />names the thing.]
-            </h2>
-          </div>
-          <div className="what-it-is__body reveal rd-2">
-            {/* REPLACE: 2-3 paragraphs explaining what the program is */}
-            <p>
-              [First paragraph: what Ship Week is in plain terms. No jargon. One idea per sentence.]
-            </p>
-            <p>
-              [Second paragraph: what makes it different from other programs.]
-            </p>
-            <p>
-              [Optional third paragraph: the outcome or the promise.]
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════ STRUCTURE ══════════════════ */}
-      <section className="structure" aria-labelledby="structure-heading">
-        <div className="structure__inner">
-          <div>
-            <p className="section-label reveal">The structure</p>
-            <h2 className="section-title reveal rd-1" id="structure-heading">
-              What happens<br />each day.
-            </h2>
-          </div>
-          <div className="structure__steps">
-            {/* REPLACE: one entry per day or phase of the program */}
-            {([
-              ['01', '[Day / Phase name]', '[What happens. What participants do. What they leave with.]'],
-              ['02', '[Day / Phase name]', '[What happens. What participants do. What they leave with.]'],
-              ['03', '[Day / Phase name]', '[What happens. What participants do. What they leave with.]'],
-              ['04', '[Day / Phase name]', '[What happens. What participants do. What they leave with.]'],
-              ['05', '[Day / Phase name]', '[What happens. What participants do. What they leave with.]'],
-            ] as [string, string, string][]).map(([n, title, desc], i) => (
-              <div key={n} className={`structure__step reveal${i > 0 ? ` rd-${Math.min(i, 4)}` : ''}`}>
-                <p className="structure__num">{n}</p>
-                <div>
-                  <h3 className="structure__name">{title}</h3>
-                  <p className="structure__desc">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════ WHO FOR ══════════════════ */}
-      <section className="who-for" aria-labelledby="who-heading">
-        <div className="who-for__header">
-          <p className="section-label reveal">Fit</p>
-          <h2 className="section-title reveal rd-1" id="who-heading">
-            Who this is for.<br />Who it is not.
-          </h2>
-        </div>
-        <div className="who-for__groups">
-          <div>
-            <p className="who-for__group-label reveal">This is for you if</p>
-            <ul className="who-for__list" role="list">
-              {/* REPLACE: 4-6 bullet points describing the ideal participant */}
-              {([
-                '[Participant trait or situation 1.]',
-                '[Participant trait or situation 2.]',
-                '[Participant trait or situation 3.]',
-                '[Participant trait or situation 4.]',
-                '[Participant trait or situation 5.]',
-              ] as string[]).map((item, i) => (
-                <li key={i} className={`who-for__item reveal${i > 0 ? ` rd-${Math.min(i, 4)}` : ''}`}>
-                  <span className="who-for__item-mark">+</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="who-for__group-label reveal rd-1">This is not for you if</p>
-            <ul className="who-for__list" role="list">
-              {/* REPLACE: 3-5 honest exclusion criteria */}
-              {([
-                '[Exclusion reason 1.]',
-                '[Exclusion reason 2.]',
-                '[Exclusion reason 3.]',
-                '[Exclusion reason 4.]',
-              ] as string[]).map((item, i) => (
-                <li key={i} className={`who-for__item reveal rd-${Math.min(i + 1, 4)}`}>
-                  <span className="who-for__item-mark who-for__item-mark--no">-</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════ COST ══════════════════ */}
-      <section className="cost" id="cost" aria-labelledby="cost-heading">
-        <div className="cost__inner">
-          <p className="section-label reveal">The cost</p>
-          {/* REPLACE: price heading */}
-          <h2 className="section-title reveal rd-1" id="cost-heading">
-            Simple pricing.<br />No surprises.
-          </h2>
-          {/* REPLACE: actual price — format: $1,200 or €800 etc. */}
-          <div className="cost__price reveal rd-2" aria-label="Price">
-            <span>[€/$]</span>[0,000]
-          </div>
-          <p className="cost__note reveal rd-3">[Payment note — e.g. "One payment. No instalment plan available."]</p>
-
-          <div className="cost__includes reveal rd-3">
-            {/* REPLACE: list what is included in the price */}
-            {([
-              '[Included item 1]',
-              '[Included item 2]',
-              '[Included item 3]',
-              '[Included item 4]',
-            ] as string[]).map((item, i) => (
-              <div key={i} className="cost__line">
-                <span className="cost__line-mark">+</span>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <button className="btn btn--primary reveal rd-4" onClick={apply}>
-            Apply now
-          </button>
-        </div>
-      </section>
-
-      {/* ══════════════════ ATTENDANCE POLICY ══════════════════ */}
-      <section className="policy" aria-labelledby="policy-heading">
-        <div className="policy__inner">
-          <div>
-            <p className="section-label reveal">The attendance policy</p>
-            <h2 className="section-title reveal rd-1" id="policy-heading">
-              What Ship Week<br />requires of you.
-            </h2>
-            <p className="approach__left-desc reveal rd-2" style={{ fontSize: '15px', lineHeight: 1.72, color: 'var(--muted-raw)', marginTop: '18px', maxWidth: '320px' }}>
-              [One or two sentences on why the rules below exist.]
+      {/* ══════════════════ SERVICES ══════════════════ */}
+      <section className="services" id="services" aria-labelledby="services-heading">
+        <div className="services__head">
+          <div className="services__head-grid">
+            <div>
+              <span className="section-label reveal">Services</span>
+              <h2 className="section-title reveal rd-1" id="services-heading">
+                Industrial-grade
+                <br />
+                compute, ready
+                <br />
+                for AI.
+              </h2>
+              <span className="amber-rule reveal rd-2" aria-hidden="true" />
+            </div>
+            <p className="services__intro reveal rd-2">
+              From training the next foundation model to running production inference,
+              V53 delivers the kind of fully-equipped, demand-ready capacity that
+              standard cloud quotas simply cannot match. Reserved, sovereign and built
+              to scale.
             </p>
           </div>
-          <div className="policy__rules">
-            {/* REPLACE: commitment and attendance rules — numbered list */}
-            {([
-              '[Rule 1 — e.g. attendance is mandatory for all sessions.]',
-              '[Rule 2 — e.g. cameras on during all live sessions.]',
-              '[Rule 3 — e.g. shipping the project is a graduation requirement.]',
-              '[Rule 4 — e.g. no recording or redistribution of session content.]',
-              '[Rule 5 — if applicable.]',
-            ] as string[]).map((rule, i) => (
-              <div key={i} className={`policy__rule reveal${i > 0 ? ` rd-${Math.min(i, 4)}` : ''}`}>
-                <span className="policy__rule-num">{String(i + 1).padStart(2, '0')}</span>
-                <span>{rule}</span>
-              </div>
-            ))}
-          </div>
+        </div>
+
+        <div className="services__grid">
+          {SERVICES.map((s, i) => (
+            <article
+              key={s.num}
+              className={`service-card reveal${i % 3 > 0 ? ` rd-${Math.min(i % 3, 4)}` : ''}`}
+            >
+              <div className="service-card__num">{s.num}</div>
+              <h3 className="service-card__title">{s.title}</h3>
+              <div className="service-card__meta">{s.meta}</div>
+              <div className="service-card__rule" aria-hidden="true" />
+              <p className="service-card__desc">{s.desc}</p>
+              <div className="service-card__tag">{s.tag}</div>
+            </article>
+          ))}
         </div>
       </section>
 
       {/* ══════════════════ ABOUT ══════════════════ */}
-      <section className="about" id="about" aria-labelledby="about-name">
+      <section className="about" id="about" aria-labelledby="about-heading">
         <div className="about__inner">
-          <div className="about__photo-wrap reveal">
-            {/* Photo copied from Altenture — replace if a different photo is needed */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand_assets/ok_transparent.png"
-              alt="[YOUR NAME], [TITLE]"
-              className="about__photo"
-              width={260} height={347}
-            />
+          <div>
+            <span className="section-label reveal">About</span>
+            <h2 className="section-title reveal rd-1" id="about-heading">
+              A backbone for
+              <br />
+              European AI.
+            </h2>
+            <span className="amber-rule reveal rd-2" aria-hidden="true" />
+            <p className="about__lead reveal rd-2">
+              An AI Compute Cluster built for the workloads that define the next decade.
+            </p>
           </div>
 
-          <div className="about__content">
-            <p className="section-label reveal rd-1" id="about-name">About me</p>
-            {/* REPLACE: your name */}
-            <h2 className="about__name reveal rd-2">[Your Name]</h2>
-            {/* REPLACE: your role / title */}
-            <p className="about__role reveal rd-2">[Title or one-line role]</p>
-            <div className="about__bio reveal rd-3">
-              {/* REPLACE: bio — first person, 3-4 paragraphs */}
+          <div>
+            <div className="about__body reveal rd-2">
               <p>
-                [First paragraph: who you are and what you do. Keep it grounded — not a résumé.]
+                <strong>V53 is a next-generation AI Compute Cluster</strong> strategically
+                located in the Groningen region, designed to become a critical backbone of
+                Europe&apos;s digital economy. It exists for one reason: to give European
+                AI builders, researchers and enterprises a fully-equipped, industrial-grade
+                place to run the workloads that matter.
               </p>
               <p>
-                [Second paragraph: the experience or background that makes you qualified to run this program.]
+                Across the continent, demand for large-scale AI and high-performance
+                computing has outpaced supply. Standard clouds throttle, sovereign options
+                are scarce, and projects stall on capacity that has not been built.
+                V53 directly addresses that structural shortage with scalable, demand-ready
+                infrastructure engineered for enterprise AI adoption.
               </p>
               <p>
-                [Third paragraph: why you built Ship Week — the problem you saw and why you decided to solve it this way.]
+                The cluster is being built for the long arc — training, inference, HPC and
+                sovereign hosting under one roof, with EU jurisdiction by default. MVP
+                compute goes live in 2027. Forward capacity is open to discuss today.
               </p>
+            </div>
+            <div className="about__pillars reveal rd-3">
+              <div className="about__pillar">
+                <div className="about__pillar-label">Industrial-grade</div>
+                <div className="about__pillar-text">Built for sustained AI and HPC workloads, not bursty side projects.</div>
+              </div>
+              <div className="about__pillar">
+                <div className="about__pillar-label">EU-sovereign</div>
+                <div className="about__pillar-text">Jurisdiction, data residency and audit trail by default.</div>
+              </div>
+              <div className="about__pillar">
+                <div className="about__pillar-label">Demand-ready</div>
+                <div className="about__pillar-text">Capacity sized for the enterprise AI adoption curve.</div>
+              </div>
+              <div className="about__pillar">
+                <div className="about__pillar-label">Strategically located</div>
+                <div className="about__pillar-text">Groningen region — power, fibre and a clear path to scale.</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════ FAQ ══════════════════ */}
-      <section className="faq-section" id="faq" aria-labelledby="faq-heading">
-        <div className="faq-section__inner">
+      {/* ══════════════════ CONTACT / CTA ══════════════════ */}
+      <section className="contact" id="contact" aria-labelledby="contact-heading">
+        <div className="contact__inner">
           <div>
-            <p className="section-label reveal">FAQ</p>
-            <h2 className="section-title reveal rd-1" id="faq-heading">
-              Questions<br />people ask.
+            <span className="section-label section-label--on-dark reveal">Contact</span>
+            <h2 className="contact__title reveal rd-1" id="contact-heading">
+              Talk to us about <span className="accent">AI capacity.</span>
             </h2>
-            <p className="reveal rd-2" style={{ fontSize: '15px', lineHeight: 1.72, color: 'var(--muted-raw)', marginTop: '14px', maxWidth: '280px' }}>
-              Anything not answered here — email [YOUR EMAIL].
+            <p className="contact__sub reveal rd-2">
+              Tell us about the workload — training, inference, HPC or sovereign hosting —
+              and the capacity you need before, at and after MVP go-live. We will come
+              back with a proposal: scope, timeline, reservation terms.
             </p>
+            <div className="reveal rd-3">
+              <button
+                className="btn btn--primary"
+                onClick={requestContact}
+                aria-label="Contact us"
+              >
+                Contact Us
+                <span className="btn__arrow" aria-hidden="true">
+                  →
+                </span>
+              </button>
+            </div>
           </div>
-          <div>
-            {/* REPLACE: program-specific Q&A pairs — use double-quoted strings to avoid apostrophe issues */}
-            {([
-              ["[Question 1?]",
-               "[Answer 1. Short and direct. No hedging.]"],
-              ["[Question 2?]",
-               "[Answer 2.]"],
-              ["[Question 3?]",
-               "[Answer 3.]"],
-              ["[Question 4?]",
-               "[Answer 4.]"],
-              ["[Question 5?]",
-               "[Answer 5.]"],
-              ["[Question 6?]",
-               "[Answer 6.]"],
-              ["[Question 7?]",
-               "[Answer 7.]"],
-            ] as [string, string][]).map(([q, a], i) => (
-              <details key={i} className="faq-item reveal">
-                <summary>{q}</summary>
-                <p className="faq-item__answer">{a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ══════════════════ APPLY / CTA ══════════════════ */}
-      <section className="apply" id="apply" aria-labelledby="apply-heading">
-        <div className="apply__inner">
-          {/* REPLACE: closing CTA heading */}
-          <h2 className="apply__title reveal" id="apply-heading">
-            Ready to<br /><span className="accent">ship?</span>
-          </h2>
-          {/* REPLACE: one sentence sub-heading */}
-          <p className="apply__sub reveal rd-1">[One sentence — tell them what happens when they click Apply.]</p>
-          <div className="reveal rd-2">
-            <button className="btn btn--primary" onClick={apply}>Apply now</button>
-          </div>
-          {/* REPLACE: contact email */}
-          <a href="mailto:[YOUR-EMAIL]" className="apply__email reveal rd-3">
-            [YOUR-EMAIL]
-          </a>
+          <aside className="contact__panel reveal rd-2" aria-label="Direct contact">
+            <div className="contact__panel-label">Direct</div>
+            <a className="contact__panel-email" href="mailto:call@v53ai.eu">
+              call@v53ai.eu
+            </a>
+            <dl className="contact__panel-meta">
+              <div className="contact__panel-meta-row">
+                <dt>Location</dt>
+                <dd>Groningen region, Netherlands</dd>
+              </div>
+              <div className="contact__panel-meta-row">
+                <dt>MVP</dt>
+                <dd>Compute go-live 2027</dd>
+              </div>
+              <div className="contact__panel-meta-row">
+                <dt>Coverage</dt>
+                <dd>EU & UK, sovereign by default</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
 
       {/* ══════════════════ FOOTER ══════════════════ */}
       <footer className="footer" role="contentinfo">
-        <a href="#" className="footer__logo" aria-label="[SITE NAME] home"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
-          {/* REPLACE: footer logo — white/light version */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand_assets/logo-white.png" alt="[SITE NAME]" width={110} height={18} />
-        </a>
-        {/* REPLACE: year and entity name */}
-        <p className="footer__copy">&copy; {new Date().getFullYear()} [YOUR NAME / ENTITY]. All rights reserved.</p>
-        <ul className="footer__links" role="list">
-          <li><a href="mailto:[YOUR-EMAIL]">Contact</a></li>
-          {/* REPLACE: add or remove social / legal links */}
-          <li><a href="https://www.linkedin.com/in/[HANDLE]" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="#faq" onClick={(e) => { e.preventDefault(); goTo('#faq') }}>FAQ</a></li>
-        </ul>
+        <div className="footer__inner">
+          <div className="footer__brand">
+            <div className="footer__logos">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand_assets/logo_V53_light.png" alt="V53 AI Cluster" />
+            </div>
+            <p className="footer__tag">
+              V53 AI Cluster — next-generation AI compute for Europe&apos;s digital
+              economy. Infra enabling AI.
+            </p>
+          </div>
+
+          <div className="footer__cols">
+            <div>
+              <div className="footer__col-label">Explore</div>
+              <ul className="footer__col-list" role="list">
+                <li>
+                  <a
+                    href="#services"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      goTo('#services')
+                    }}
+                  >
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      goTo('#about')
+                    }}
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      goTo('#contact')
+                    }}
+                  >
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div className="footer__col-label">Contact</div>
+              <ul className="footer__col-list" role="list">
+                <li>
+                  <a href="mailto:call@v53ai.eu">call@v53ai.eu</a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      goTo('#contact')
+                    }}
+                  >
+                    Call us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer__bottom">
+          <span>© {new Date().getFullYear()} V53 AI Cluster · MCPV. All rights reserved.</span>
+          <span>Infra enabling AI</span>
+        </div>
       </footer>
     </>
   )
