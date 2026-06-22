@@ -6,49 +6,49 @@ const SERVICES: { num: string; title: string; meta: string; desc: string; tag: s
   {
     num: '01',
     title: 'AI Training Compute',
-    meta: 'GPU clusters · multi-node',
+    meta: 'GPU clusters · multi node',
     desc:
-      'Dense GPU capacity for training foundation models, fine-tuning LLMs and running large-scale deep-learning workloads. Reserved nodes, predictable performance, transparent utilisation reporting from day one.',
-    tag: 'Train · Fine-tune · Iterate',
+      'Dense GPU capacity for training foundation models, fine tuning LLMs and running large scale deep learning workloads. Reserved nodes, predictable performance, transparent utilisation reporting from day one.',
+    tag: 'Train · Fine tune · Iterate',
   },
   {
     num: '02',
-    title: 'High-Performance Computing',
+    title: 'High Performance Computing',
     meta: 'HPC · research & enterprise',
     desc:
-      'Industrial-grade HPC capacity for scientific computing, simulation, computational chemistry, financial modelling and any workload that has outgrown a standard cloud quota. Built to run hot, designed to stay stable.',
+      'Industrial grade HPC capacity for scientific computing, simulation, computational chemistry, financial modelling and any workload that has outgrown a standard cloud quota. Designed to run hot, but stay stable.',
     tag: 'Simulate · Solve · Scale',
   },
   {
     num: '03',
     title: 'AI Inference at Scale',
-    meta: 'Low-latency · production',
+    meta: 'Low latency · production',
     desc:
-      'Production inference for chat, search, agents and decision systems. Tuned for latency, cost-per-token and sustained throughput, with capacity that grows with your traffic instead of throttling it.',
+      'Production inference for chat, search, agents and decision systems. Tuned for latency, cost per token and sustained throughput, with capacity that grows with your traffic instead of throttling it.',
     tag: 'Serve · Scale · Save',
   },
   {
     num: '04',
     title: 'Sovereign AI Hosting',
-    meta: 'EU · GDPR-native',
+    meta: 'EU · GDPR native',
     desc:
-      'Compute and data that never leave Europe. Sovereign infrastructure for regulated industries — finance, healthcare, public sector, defence — where jurisdiction, lineage and audit trail are not negotiable.',
+      'Compute and data that never leave Europe. Sovereign infrastructure for regulated industries: finance, healthcare, public sector, defence, where jurisdiction, lineage and audit trail are not negotiable.',
     tag: 'Sovereignty · Residency · Audit',
   },
   {
     num: '05',
     title: 'Colocation & Hybrid',
-    meta: 'Bring-your-own · custom',
+    meta: 'Bring your own · custom',
     desc:
-      'Place your own hardware inside an AI-grade facility. Direct power, dense cooling, high-bandwidth interconnect, plus a clean handoff into the wider V53 fabric when you need to burst beyond your own racks.',
-    tag: 'Co-locate · Connect · Extend',
+      'Place your own hardware inside an AI grade facility. Direct power, dense cooling, high bandwidth interconnect, plus a clean handoff into the wider V53 fabric when you need to burst beyond your own racks.',
+    tag: 'Co locate · Connect · Extend',
   },
   {
     num: '06',
     title: 'Capacity Reservation',
-    meta: 'Pre-2027 · forward-booked',
+    meta: 'Pre 2027 · forward booked',
     desc:
-      'Secure dedicated AI compute ahead of MVP go-live in 2027. Forward contracts, ramp schedules and engineering support so your roadmap is not gated by capacity that has not been built yet.',
+      'Secure dedicated AI compute ahead of MVP go live in 2027. Forward contracts, ramp schedules and engineering support so your roadmap is not gated by capacity that has not been built yet.',
     tag: 'Reserve · Ramp · Launch',
   },
 ]
@@ -56,11 +56,11 @@ const SERVICES: { num: string; title: string; meta: string; desc: string; tag: s
 const FAQ: [string, string][] = [
   [
     "What is V53 AI Cluster?",
-    "V53 is a next-generation AI Compute Cluster being built in the Groningen region. It exists to give European AI builders, researchers and enterprises an industrial-grade place to run training, inference and high-performance computing workloads. MVP compute goes live in 2027.",
+    "V53 is a next generation AI Compute Cluster being built in the Groningen region. It exists to give European AI builders, researchers and enterprises an industrial grade place to run training, inference and high performance computing workloads. MVP compute goes live in 2027.",
   ],
   [
     "When can I start using V53 compute?",
-    "MVP compute is scheduled to go live in 2027. Forward capacity reservations are open today — talk to us early and we will reserve dedicated nodes and a ramp schedule aligned with your roadmap.",
+    "MVP compute is scheduled to go live in 2027. Forward capacity reservations are open today. Talk to us early and we will reserve dedicated nodes and a ramp schedule aligned with your roadmap.",
   ],
   [
     "Why Groningen?",
@@ -68,39 +68,39 @@ const FAQ: [string, string][] = [
   ],
   [
     "What workloads is V53 designed for?",
-    "Large-scale AI training, foundation model work and fine-tuning, production inference at scale, scientific HPC, and sovereign hosting for regulated workloads. If a job has outgrown standard cloud quotas, V53 is built for it.",
+    "Large scale AI training, foundation model work and fine tuning, production inference at scale, scientific HPC, and sovereign hosting for regulated workloads. If a job has outgrown standard cloud quotas, V53 is designed for it.",
   ],
   [
-    "What does EU-sovereign actually mean here?",
-    "Your data and compute stay inside EU jurisdiction by default. No US extra-territorial reach, no cross-border data transfers without explicit consent, and audit trails that meet GDPR, EU AI Act and sectoral requirements out of the box.",
+    "What does EU sovereign actually mean here?",
+    "Your data and compute stay inside EU jurisdiction by default. No US extra territorial reach, no cross border data transfers without explicit consent, and audit trails that meet GDPR, EU AI Act and sectoral requirements out of the box.",
   ],
   [
     "Can I reserve capacity before 2027?",
-    "Yes. Forward contracts are open now. We work backwards from your launch date to size the reservation, set a ramp schedule and lock in pricing — so your roadmap is not gated by capacity that has not been built yet.",
+    "Yes. Forward contracts are open now. We work backwards from your launch date to size the reservation, set a ramp schedule and lock in pricing, so your roadmap is not gated by capacity that has not been built yet.",
   ],
   [
     "What hardware will V53 run?",
-    "Dense GPU clusters tuned for current-generation training and inference, plus CPU-heavy nodes for HPC, simulation and scientific workloads. Specific SKUs, memory and interconnect topology are confirmed in your reservation — what is in the contract is what you get, not a marketing slide.",
+    "Dense GPU clusters tuned for current generation training and inference, plus CPU heavy nodes for HPC, simulation and scientific workloads. Specific SKUs, memory and interconnect topology are confirmed in your reservation. What is in the contract is what you get, not a marketing slide.",
   ],
   [
     "How does pricing work?",
-    "Three modes. Reserved capacity for known, sustained workloads at the best per-unit price. On-demand for bursty or experimental usage. Hybrid where reservation carries the baseline and on-demand absorbs the peaks. No mystery line items, no surprise egress bills.",
+    "Three modes. Reserved capacity for known, sustained workloads at the best per unit price. On demand for bursty or experimental usage. Hybrid where reservation carries the baseline and on demand absorbs the peaks. No mystery line items, no surprise egress bills.",
   ],
   [
     "Can I bring my own hardware?",
-    "Yes. Colocation is part of the offer — place your own racks inside the V53 facility for power, dense cooling and high-bandwidth interconnect, then burst into the wider cluster fabric when you need to scale beyond what you brought.",
+    "Yes. Colocation is part of the offer. Place your own racks inside the V53 facility for power, dense cooling and high bandwidth interconnect, then burst into the wider cluster fabric when you need to scale beyond what you brought.",
   ],
   [
     "How do you handle data residency and compliance?",
-    "Data stays inside the EU unless you explicitly opt to move it. We provide signed Data Processing Agreements, region-locked storage, and the audit hooks needed for GDPR, the EU AI Act, and sector regulators in finance, healthcare and the public sector.",
+    "Data stays inside the EU unless you explicitly opt to move it. We provide signed Data Processing Agreements, region locked storage, and the audit hooks needed for GDPR, the EU AI Act, and sector regulators in finance, healthcare and the public sector.",
   ],
   [
     "Who is behind V53?",
-    "V53 is operated by MCPV, the entity building and running the cluster infrastructure. NODUM AI Competence Hub is the applied AI engineering arm in the same family — together they form the V53 AI Cluster ecosystem.",
+    "V53 is operated by MCPV, the entity building and running the cluster infrastructure. NODUM AI Competence Hub is the applied AI engineering arm in the same family. Together they form the V53 AI Cluster ecosystem.",
   ],
   [
     "How do I get started?",
-    "Send a short note to call@v53ai.eu describing the workload, the capacity you need and the timeframe. We come back within two working days with a scoping conversation and — if we are a fit — a proposal covering reservation terms, ramp and engineering support.",
+    "Send a short note to call@v53ai.eu describing the workload, the capacity you need and the timeframe. We come back within two working days with a scoping conversation and, if we are a fit, a proposal covering reservation terms, ramp and engineering support.",
   ],
 ]
 
@@ -160,7 +160,7 @@ export default function Home() {
     }
   }
 
-  // Placeholder action for the Contact Us button — wire to booking / form later.
+  // Placeholder action for the Contact Us button, wire to booking / form later.
   const requestContact = () => goTo('#contact')
 
   return (
@@ -173,7 +173,7 @@ export default function Home() {
         <a
           href="#"
           className="nav__brand"
-          aria-label="V53 AI Cluster — home"
+          aria-label="V53 AI Cluster, home"
           onClick={(e) => {
             e.preventDefault()
             setMenuOpen(false)
@@ -205,7 +205,7 @@ export default function Home() {
         <button
           className="nav__cta"
           onClick={() => goTo('#contact')}
-          aria-label="Call us — jump to contact"
+          aria-label="Call us, jump to contact"
         >
           Call us
           <span className="nav__cta-arrow" aria-hidden="true">
@@ -281,15 +281,15 @@ export default function Home() {
           </div>
 
           <h1 className="hero__headline hero-anim ha-2" id="hero-heading">
-            Next-generation{' '}
+            Next generation{' '}
             <span className="accent">AI compute</span> for Europe&apos;s digital economy.
           </h1>
 
           <p className="hero__sub hero-anim ha-3">
-            V53 is an industrial-grade AI Compute Cluster purpose-built for large-scale
-            AI and high-performance workloads. Strategically located in the Groningen
+            V53 is an industrial grade AI Compute Cluster purpose built for large scale
+            AI and high performance workloads. Strategically located in the Groningen
             region, designed to be a critical backbone for enterprise AI adoption,
-            data-driven innovation and economic competitiveness.
+            data driven innovation and economic competitiveness.
           </p>
 
           <div className="hero__actions hero-anim ha-4">
@@ -315,15 +315,15 @@ export default function Home() {
           <div className="hero__stats hero-anim ha-5" aria-label="At a glance">
             <div className="hero__stat">
               <div className="hero__stat-num">2027</div>
-              <div className="hero__stat-label">MVP compute go-live</div>
+              <div className="hero__stat-label">MVP compute go live</div>
             </div>
             <div className="hero__stat">
               <div className="hero__stat-num">Groningen</div>
               <div className="hero__stat-label">Strategic EU location</div>
             </div>
             <div className="hero__stat">
-              <div className="hero__stat-num">EU-sovereign</div>
-              <div className="hero__stat-label">GDPR-native by design</div>
+              <div className="hero__stat-num">EU sovereign</div>
+              <div className="hero__stat-label">GDPR native by design</div>
             </div>
           </div>
         </div>
@@ -336,7 +336,7 @@ export default function Home() {
             <div>
               <span className="section-label reveal">Services</span>
               <h2 className="section-title reveal rd-1" id="services-heading">
-                Industrial-grade
+                Industrial grade
                 <br />
                 compute, ready
                 <br />
@@ -346,9 +346,9 @@ export default function Home() {
             </div>
             <p className="services__intro reveal rd-2">
               From training the next foundation model to running production inference,
-              V53 delivers the kind of fully-equipped, demand-ready capacity that
-              standard cloud quotas simply cannot match. Reserved, sovereign and built
-              to scale.
+              V53 delivers the kind of fully equipped, demand ready capacity that
+              standard cloud quotas simply cannot match. Reserved, sovereign and
+              scalable.
             </p>
           </div>
         </div>
@@ -382,48 +382,48 @@ export default function Home() {
             </h2>
             <span className="amber-rule reveal rd-2" aria-hidden="true" />
             <p className="about__lead reveal rd-2">
-              An AI Compute Cluster built for the workloads that define the next decade.
+              An AI Compute Cluster for the workloads that define the next decade.
             </p>
           </div>
 
           <div>
             <div className="about__body reveal rd-2">
               <p>
-                <strong>V53 is a next-generation AI Compute Cluster</strong> strategically
+                <strong>V53 is a next generation AI Compute Cluster</strong> strategically
                 located in the Groningen region, designed to become a critical backbone of
                 Europe&apos;s digital economy. It exists for one reason: to give European
-                AI builders, researchers and enterprises a fully-equipped, industrial-grade
+                AI builders, researchers and enterprises a fully equipped, industrial grade
                 place to run the workloads that matter.
               </p>
               <p>
-                Across the continent, demand for large-scale AI and high-performance
+                Across the continent, demand for large scale AI and high performance
                 computing has outpaced supply. Standard clouds throttle, sovereign options
                 are scarce, and projects stall on capacity that has not been built.
-                V53 directly addresses that structural shortage with scalable, demand-ready
+                V53 directly addresses that structural shortage with scalable, demand ready
                 infrastructure engineered for enterprise AI adoption.
               </p>
               <p>
-                The cluster is being built for the long arc — training, inference, HPC and
+                The cluster is being built for the long arc: training, inference, HPC and
                 sovereign hosting under one roof, with EU jurisdiction by default. MVP
                 compute goes live in 2027. Forward capacity is open to discuss today.
               </p>
             </div>
             <div className="about__pillars reveal rd-3">
               <div className="about__pillar">
-                <div className="about__pillar-label">Industrial-grade</div>
+                <div className="about__pillar-label">Industrial grade</div>
                 <div className="about__pillar-text">Built for sustained AI and HPC workloads, not bursty side projects.</div>
               </div>
               <div className="about__pillar">
-                <div className="about__pillar-label">EU-sovereign</div>
+                <div className="about__pillar-label">EU sovereign</div>
                 <div className="about__pillar-text">Jurisdiction, data residency and audit trail by default.</div>
               </div>
               <div className="about__pillar">
-                <div className="about__pillar-label">Demand-ready</div>
+                <div className="about__pillar-label">Demand ready</div>
                 <div className="about__pillar-text">Capacity sized for the enterprise AI adoption curve.</div>
               </div>
               <div className="about__pillar">
                 <div className="about__pillar-label">Strategically located</div>
-                <div className="about__pillar-text">Groningen region — power, fibre and a clear path to scale.</div>
+                <div className="about__pillar-text">Groningen region: power, fibre and a clear path to scale.</div>
               </div>
             </div>
           </div>
@@ -442,7 +442,7 @@ export default function Home() {
             </h2>
             <span className="amber-rule reveal rd-2" aria-hidden="true" />
             <p className="faq__aside-text reveal rd-3">
-              Anything not answered here — email{' '}
+              Anything not answered here, email{' '}
               <a href="mailto:call@v53ai.eu">call@v53ai.eu</a>.
             </p>
           </div>
@@ -466,22 +466,10 @@ export default function Home() {
               Talk to us about <span className="accent">AI capacity.</span>
             </h2>
             <p className="contact__sub reveal rd-2">
-              Tell us about the workload — training, inference, HPC or sovereign hosting —
-              and the capacity you need before, at and after MVP go-live. We will come
+              Tell us about the workload: training, inference, HPC or sovereign hosting,
+              and the capacity you need before, at and after MVP go live. We will come
               back with a proposal: scope, timeline, reservation terms.
             </p>
-            <div className="reveal rd-3">
-              <button
-                className="btn btn--primary"
-                onClick={requestContact}
-                aria-label="Contact us"
-              >
-                Contact Us
-                <span className="btn__arrow" aria-hidden="true">
-                  →
-                </span>
-              </button>
-            </div>
           </div>
 
           <aside className="contact__panel reveal rd-2" aria-label="Direct contact">
@@ -496,7 +484,7 @@ export default function Home() {
               </div>
               <div className="contact__panel-meta-row">
                 <dt>MVP</dt>
-                <dd>Compute go-live 2027</dd>
+                <dd>Compute go live 2027</dd>
               </div>
               <div className="contact__panel-meta-row">
                 <dt>Coverage</dt>
@@ -516,7 +504,7 @@ export default function Home() {
               <img src="/brand_assets/logo_V53_light.png" alt="V53 AI Cluster" />
             </div>
             <p className="footer__tag">
-              V53 AI Cluster — next-generation AI compute for Europe&apos;s digital
+              V53 AI Cluster, next generation AI compute for Europe&apos;s digital
               economy. Infra enabling AI.
             </p>
           </div>

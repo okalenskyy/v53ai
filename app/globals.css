@@ -58,8 +58,8 @@
   --brand-soft:  var(--amber-pale);
 
   /* Hero dark surfaces */
-  --hero-bg:     #001B2D;
-  --hero-bg-2:   #002D4A;
+  --hero-bg:     #2d5d9e;
+  --hero-bg-2:   #2d5d9e;
   --hero-text:   #FFFFFF;
   --hero-muted:  rgba(255,255,255,0.62);
   --hero-dimmer: rgba(255,255,255,0.32);
@@ -471,7 +471,7 @@ body {
 /* ─── Contact / CTA ────────────────────────────────────────── */
 .contact {
   padding: var(--section-py) var(--section-px);
-  background: var(--navy); color: #fff;
+  background: var(--hero-bg); color: #fff;
   position: relative; overflow: hidden; text-align: left;
 }
 .contact::before {
@@ -530,7 +530,7 @@ body {
 
 /* ─── Footer ───────────────────────────────────────────────── */
 .footer {
-  background: var(--near-black); color: rgba(255,255,255,0.6);
+  background: var(--hero-bg); color: rgba(255,255,255,0.6);
   padding: 48px var(--section-px) 36px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }

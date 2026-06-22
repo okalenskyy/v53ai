@@ -17,9 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'V53 AI Cluster — Next-generation AI compute infrastructure for Europe',
+  title: 'V53 AI Cluster, Next generation AI compute infrastructure for Europe',
   description:
-    'V53 is a next-generation AI Compute Cluster in the Groningen region, designed to become a critical backbone of Europe’s digital economy. MVP compute go-live 2027.',
+    'V53 is a next generation AI Compute Cluster in the Groningen region, designed to become a critical backbone of Europe’s digital economy. MVP compute go live 2027.',
   icons: { icon: '/brand_assets/favicon.png', shortcut: '/brand_assets/favicon.ico' },
 }
 
