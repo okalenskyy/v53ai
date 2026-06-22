@@ -286,10 +286,12 @@ export default function Home() {
           </h1>
 
           <p className="hero__sub hero-anim ha-3">
-            V53 is an industrial grade AI Compute Cluster purpose built for large scale
-            AI and high performance workloads. Strategically located in the Groningen
-            region, designed to be a critical backbone for enterprise AI adoption,
-            data driven innovation and economic competitiveness.
+            V53 is a next generation AI Compute Cluster strategically located in Groningen
+            region, designed to become a critical building block of Europe’s digital
+            backbone. The Cluster directly addresses a growing structural shortage of
+            fully infrastructured, industrial grade locations capable of supporting large
+            scale AI and high performance computing workloads, scalable, demand ready and
+            sovereign by design.
           </p>
 
           <div className="hero__actions hero-anim ha-4">
@@ -407,11 +409,23 @@ export default function Home() {
                 sovereign hosting under one roof, with EU jurisdiction by default. MVP
                 compute goes live in 2027. Forward capacity is open to discuss today.
               </p>
+              <p>
+                The V53 AI Cluster enables differentiated AI sovereignty by design
+                infrastructures offerings, provides cluster management to address the needs
+                of sovereign EU, NL based, regulated, and enterprise AI workloads.
+              </p>
+              <p>
+                V53 is founded by a team of seasoned serial entrepreneurs with a proven
+                track record across infrastructure development, finance, digital platforms,
+                clean technology, and regulatory strategy. This multidisciplinary expertise
+                uniquely positions the team to execute complex, capital intensive projects
+                and to navigate regulatory, sustainability, and market dynamics at scale.
+              </p>
             </div>
             <div className="about__pillars reveal rd-3">
               <div className="about__pillar">
                 <div className="about__pillar-label">Industrial grade</div>
-                <div className="about__pillar-text">Built for sustained AI and HPC workloads, not bursty side projects.</div>
+                <div className="about__pillar-text">Designed for sustained AI and HPC workloads, not bursty side projects.</div>
               </div>
               <div className="about__pillar">
                 <div className="about__pillar-label">EU sovereign</div>
