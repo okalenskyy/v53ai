@@ -13,7 +13,7 @@ export const SITE_DESCRIPTION =
   'V53 is a next generation AI Compute Cluster in the Groningen region, delivering sovereign, industrial grade training, inference and HPC capacity for Europe. MVP compute goes live in 2027.'
 
 /** Title used across metadata and OG. */
-export const SITE_TITLE = 'V53 AI Cluster, compute capacity for the EU digital economy'
+export const SITE_TITLE = 'V53 AI Cluster, computing capacity for the EU digital economy'
 
 /** OG card (1200x630). Absolute URL is built from DOMAIN in metadata/schema. */
 export const OG_IMAGE = '/brand_assets/og/og-default.jpg'

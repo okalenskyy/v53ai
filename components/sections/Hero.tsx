@@ -10,7 +10,7 @@ export function Hero() {
         </div>
 
         <h1 className="hero__headline hero-anim ha-2" id="hero-heading">
-          <span className="accent">Compute capacity</span> for EU digital economy.
+          <span className="accent">Computing capacity</span> for the EU digital economy.
         </h1>
 
         <p className="hero__sub hero-anim ha-3">
