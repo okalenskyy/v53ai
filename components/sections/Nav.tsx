@@ -81,12 +81,9 @@ export function Nav() {
         <button
           className="nav__cta"
           onClick={() => goTo('#contact')}
-          aria-label="Talk to us, jump to contact"
+          aria-label="Reserve capacity, jump to contact"
         >
-          Talk to us
-          <span className="nav__cta-arrow" aria-hidden="true">
-            →
-          </span>
+          Reserve capacity
         </button>
 
         <button
@@ -132,10 +129,7 @@ export function Nav() {
               className="btn btn--primary mobile-menu__cta"
               onClick={() => goTo('#contact')}
             >
-              Talk to us
-              <span className="btn__arrow" aria-hidden="true">
-                →
-              </span>
+              Reserve capacity
             </button>
             <a className="mobile-menu__email" href={`mailto:${EMAIL}`}>
               {EMAIL}
@@ -147,7 +141,7 @@ export function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn →
+                LinkedIn
               </a>
             ) : null}
           </div>

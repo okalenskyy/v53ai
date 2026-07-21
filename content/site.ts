@@ -25,7 +25,7 @@ export const LEGAL_UPDATED = '21 July 2026'
 export const EMAIL = 'team@v53ai.eu'
 
 /** LinkedIn company page. Empty string hides the link until supplied. */
-export const LINKEDIN_URL = 'https://www.linkedin.com/company/109852403'
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/v53cloud'
 
 /**
  * Legal entity (imprint + Organization schema). Values marked TODO(entity)

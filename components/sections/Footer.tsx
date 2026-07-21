@@ -41,7 +41,7 @@ export function Footer() {
                 <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </li>
               <li>
-                <a href="/#contact">Talk to us</a>
+                <a href="/#contact">Reserve capacity</a>
               </li>
               {LINKEDIN_URL ? (
                 <li>

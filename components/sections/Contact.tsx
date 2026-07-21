@@ -29,7 +29,6 @@ export function Contact() {
               rel="noopener noreferrer"
             >
               LinkedIn
-              <span aria-hidden="true"> →</span>
             </a>
           ) : null}
           <dl className="contact__panel-meta">

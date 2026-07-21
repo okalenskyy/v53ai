@@ -43,7 +43,6 @@ export function Services() {
             {s.featured ? (
               <a className="service-card__cta" href="#contact">
                 Reserve capacity
-                <span aria-hidden="true"> →</span>
               </a>
             ) : null}
           </article>

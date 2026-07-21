@@ -2,8 +2,6 @@ export function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
       <div className="hero__top-stripe" aria-hidden="true" />
-      <div className="hero__grid" aria-hidden="true" />
-      <div className="hero__racks" aria-hidden="true" />
 
       <div className="hero__content">
         <div className="hero__eyebrow hero-anim ha-1" aria-hidden="true">
@@ -12,8 +10,7 @@ export function Hero() {
         </div>
 
         <h1 className="hero__headline hero-anim ha-2" id="hero-heading">
-          Next generation{' '}
-          <span className="accent">AI compute</span> for Europe&apos;s digital economy.
+          <span className="accent">Compute capacity</span> for EU digital economy.
         </h1>
 
         <p className="hero__sub hero-anim ha-3">
@@ -23,11 +20,8 @@ export function Hero() {
         </p>
 
         <div className="hero__actions hero-anim ha-4">
-          <a className="btn btn--primary" href="#contact" aria-label="Talk to us">
-            Talk to us
-            <span className="btn__arrow" aria-hidden="true">
-              →
-            </span>
+          <a className="btn btn--primary" href="#contact" aria-label="Reserve capacity">
+            Reserve capacity
           </a>
           <a className="btn btn--ghost-dark" href="#services" aria-label="Explore services">
             Explore services

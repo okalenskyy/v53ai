@@ -27,8 +27,7 @@ export function ReservationModes() {
             <div className="mode-card__rule" aria-hidden="true" />
             <p className="mode-card__desc">{m.desc}</p>
             <a className="mode-card__cta" href="#contact">
-              Discuss capacity
-              <span aria-hidden="true"> →</span>
+              Reserve capacity
             </a>
           </article>
         ))}

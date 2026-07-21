@@ -55,3 +55,6 @@ infra/crash.log
 infra/crash.*.log
 infra/*.tfvars
 !infra/*.tfvars.example
+
+# Local design source assets (large originals, not shipped)
+design-assets/
