@@ -7,7 +7,7 @@ export function Contact() {
         <div>
           <span className="section-label section-label--on-dark reveal">Contact</span>
           <h2 className="contact__title reveal rd-1" id="contact-heading">
-            Talk to us about <span className="accent">AI capacity.</span>
+            Reserve your <span className="accent">compute capacity.</span>
           </h2>
           <p className="contact__sub reveal rd-2">
             Tell us about the workload: training, inference, HPC or sovereign hosting,
