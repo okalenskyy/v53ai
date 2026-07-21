@@ -59,6 +59,7 @@ export function Nav() {
           <span className="nav__logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand_assets/logo_V53_dark.png" alt="V53 AI Cluster" />
+            <span className="logo-motto">Infra enabling AI</span>
           </span>
         </a>
 

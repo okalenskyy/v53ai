@@ -8,6 +8,7 @@ export function Footer() {
           <div className="footer__logos">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand_assets/logo_V53_light.png" alt="V53 AI Cluster" />
+            <span className="logo-motto">Infra enabling AI</span>
           </div>
           <p className="footer__tag">
             V53 AI Cluster, next generation AI compute for Europe&apos;s digital
