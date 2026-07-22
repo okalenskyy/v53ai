@@ -54,19 +54,19 @@ export function About() {
           <div className="about__pillars reveal rd-3">
             <div className="about__pillar">
               <div className="about__pillar-label">Industrial grade</div>
-              <div className="about__pillar-text">Designed for sustained AI and HPC workloads, not bursty side projects.</div>
+              <div className="about__pillar-text">Engineered for sustained, high density AI and HPC workloads at scale.</div>
             </div>
             <div className="about__pillar">
               <div className="about__pillar-label">EU sovereign</div>
-              <div className="about__pillar-text">Jurisdiction, data residency and audit trail by default.</div>
+              <div className="about__pillar-text">EU sovereignty from the infrastructure layers.</div>
             </div>
             <div className="about__pillar">
               <div className="about__pillar-label">Demand ready</div>
-              <div className="about__pillar-text">Capacity sized for the enterprise AI adoption curve.</div>
+              <div className="about__pillar-text">Capacity designed and developed to meet demand.</div>
             </div>
             <div className="about__pillar">
               <div className="about__pillar-label">Strategically located</div>
-              <div className="about__pillar-text">Groningen region: power, fibre and a clear path to scale.</div>
+              <div className="about__pillar-text">Groningen: abundant power, dark fibre and a clear path to scale.</div>
             </div>
           </div>
         </div>

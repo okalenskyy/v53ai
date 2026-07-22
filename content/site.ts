@@ -44,6 +44,6 @@ export const ENTITY = {
  */
 export const SECTIONS = {
   partners: false,
-  voices: true,
-  team: true,
+  voices: false,
+  team: false,
 }
