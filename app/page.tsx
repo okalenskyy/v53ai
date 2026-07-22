@@ -25,7 +25,6 @@ export default function Home() {
       <Nav />
       <Hero />
       <Ticker />
-      <Services />
       <WhyV53 />
       <Location />
       <ReservationModes />
@@ -36,6 +35,7 @@ export default function Home() {
       <EuAcceleration />
       <ComputeLayer />
       <Nodum />
+      <Services />
       <Faq />
       <Contact />
       <Footer />

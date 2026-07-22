@@ -14,9 +14,9 @@ export function Hero() {
         </h1>
 
         <p className="hero__sub hero-anim ha-3">
-          V53 is a next generation AI Compute Cluster in the Groningen region, a critical
-          building block of Europe’s digital backbone. Industrial grade capacity for
-          large scale AI and HPC: scalable, demand ready and sovereign by design.
+          V53 is a next generation AI Compute Infra Cluster in the Groningen region, a
+          critical building block of Europe’s digital backbone. Industrial grade capacity
+          for large scale AI and HPC: scalable, demand ready and sovereign by design.
         </p>
 
         <div className="hero__actions hero-anim ha-4">
@@ -34,12 +34,12 @@ export function Hero() {
             <div className="hero__stat-label">MVP compute go live</div>
           </div>
           <div className="hero__stat">
-            <div className="hero__stat-num">Groningen</div>
-            <div className="hero__stat-label">Strategic EU location</div>
-          </div>
-          <div className="hero__stat">
             <div className="hero__stat-num">EU sovereign</div>
             <div className="hero__stat-label">GDPR native by design</div>
+          </div>
+          <div className="hero__stat">
+            <div className="hero__stat-num">Groningen Region</div>
+            <div className="hero__stat-label">Strategic EU location</div>
           </div>
         </div>
       </div>

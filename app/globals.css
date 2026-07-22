@@ -378,7 +378,8 @@ body {
 /* ─── Services ─────────────────────────────────────────────── */
 .services {
   padding: var(--section-py) var(--section-px);
-  background: var(--cloud);
+  background: var(--white);
+  border-top: 1px solid var(--border-raw);
 }
 .services__head { max-width: 1280px; margin: 0 auto 56px; }
 .services__head-grid {
@@ -673,7 +674,7 @@ body {
 /* ─── Why V53 ──────────────────────────────────────────────── */
 .why {
   padding: var(--section-py) var(--section-px);
-  background: var(--white); border-top: 1px solid var(--border-raw);
+  background: var(--cloud); border-top: 1px solid var(--border-raw);
 }
 .why__head { max-width: 1280px; margin: 0 auto 48px; }
 .why__grid {
@@ -700,7 +701,7 @@ body {
 /* ─── Location + region map ────────────────────────────────── */
 .location {
   padding: var(--section-py) var(--section-px);
-  background: var(--cloud); border-top: 1px solid var(--border-raw);
+  background: var(--white); border-top: 1px solid var(--border-raw);
 }
 .location__inner {
   display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
@@ -755,7 +756,7 @@ body {
 /* ─── Reservation modes ────────────────────────────────────── */
 .modes {
   padding: var(--section-py) var(--section-px);
-  background: var(--white); border-top: 1px solid var(--border-raw);
+  background: var(--cloud); border-top: 1px solid var(--border-raw);
 }
 .modes__head {
   display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: end;
