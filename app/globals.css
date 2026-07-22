@@ -846,6 +846,71 @@ body {
 .team-card__role { font-family: var(--font-mono); font-size: 11px; color: var(--amber); letter-spacing: 0.08em; text-transform: uppercase; margin: 4px 0 10px; }
 .team-card__bio { font-size: 13.5px; line-height: 1.6; color: var(--navy-mid); max-width: 240px; }
 
+/* ─── Infrastructure chapter (Green by design → NODUM) ─────── */
+.chapter {
+  padding: var(--section-py) var(--section-px);
+  border-top: 1px solid var(--border-raw);
+}
+.chapter--cloud { background: var(--cloud); }
+.chapter--white { background: var(--white); }
+.chapter--dark { background: var(--hero-bg); color: #fff; border-top-color: rgba(255,255,255,0.08); }
+.chapter__inner { max-width: 1280px; margin: 0 auto; }
+.chapter__head { max-width: 780px; margin-bottom: 44px; }
+.chapter__lead { margin-top: 4px; }
+.chapter__lead p { font-size: 17px; line-height: 1.75; color: var(--navy-mid); max-width: 640px; }
+.chapter__lead p + p { margin-top: 14px; }
+.chapter--dark .chapter__lead p { color: rgba(255,255,255,0.72); }
+
+.chapter__block { margin-top: 4px; }
+.chapter__subhead {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(22px, 2.6vw, 28px);
+  letter-spacing: -0.02em; color: var(--display); margin-bottom: 12px;
+}
+.chapter__sublead { font-size: 16px; line-height: 1.7; color: var(--navy-mid); max-width: 640px; margin-bottom: 28px; }
+
+.chapter__grid { display: grid; gap: 16px; }
+.chapter__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.chapter__grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chapter__grid--auto { grid-template-columns: repeat(auto-fit, minmax(238px, 1fr)); }
+
+.feature-card {
+  background: var(--white); border: 1px solid var(--border-raw); padding: 26px 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); border-color: var(--amber); }
+.chapter--dark .feature-card { background: rgba(255,255,255,0.05); border-color: var(--hero-border); }
+.chapter--dark .feature-card:hover { background: rgba(255,255,255,0.09); border-color: var(--amber); }
+.feature-card__rule { width: 32px; height: 2px; background: var(--amber); margin-bottom: 16px; }
+.feature-card__label {
+  font-family: var(--font-display); font-weight: 700; font-size: 17px;
+  letter-spacing: -0.01em; color: var(--navy); margin-bottom: 8px; line-height: 1.25;
+}
+.chapter--dark .feature-card__label { color: #fff; }
+.feature-card__text { font-size: 14.5px; line-height: 1.65; color: var(--navy-mid); }
+.chapter--dark .feature-card__text { color: rgba(255,255,255,0.72); }
+
+.eu-card { background: var(--cloud); border: 1px solid var(--border-raw); padding: 28px 26px; }
+.eu-card__label {
+  font-family: var(--font-display); font-weight: 700; font-size: 19px;
+  letter-spacing: -0.01em; color: var(--navy); margin-bottom: 10px; line-height: 1.25;
+}
+.eu-card__text { font-size: 14.5px; line-height: 1.7; color: var(--navy-mid); }
+.eu-card__note {
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.5; color: var(--slate);
+  margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-raw);
+}
+
+.spec-band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.spec { padding-left: 18px; border-left: 2px solid var(--amber); }
+.spec__num {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.4vw, 40px);
+  letter-spacing: -0.02em; color: #fff; line-height: 1.05;
+}
+.spec__label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-top: 10px; line-height: 1.45; max-width: 260px;
+}
+
 /* ─── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1100px) {
   .services__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -856,6 +921,7 @@ body {
   .modes__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .modes__head { grid-template-columns: 1fr; gap: 24px; }
   .location__inner { grid-template-columns: 1fr; gap: 48px; }
+  .chapter__grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
   .footer__inner { grid-template-columns: 1fr; gap: 36px; }
@@ -872,6 +938,7 @@ body {
   .why__grid { grid-template-columns: 1fr; }
   .modes__grid { grid-template-columns: 1fr; }
   .voices__grid { grid-template-columns: 1fr; }
+  .chapter__grid--3, .chapter__grid--2, .spec-band { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .hero__actions { flex-direction: column; align-items: stretch; }

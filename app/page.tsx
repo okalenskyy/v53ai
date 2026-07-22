@@ -7,6 +7,11 @@ import { Location } from '@/components/sections/Location'
 import { ReservationModes } from '@/components/sections/ReservationModes'
 import { Voices } from '@/components/sections/Voices'
 import { About } from '@/components/sections/About'
+import { GreenByDesign } from '@/components/sections/GreenByDesign'
+import { EnergyCluster } from '@/components/sections/EnergyCluster'
+import { EuAcceleration } from '@/components/sections/EuAcceleration'
+import { ComputeLayer } from '@/components/sections/ComputeLayer'
+import { Nodum } from '@/components/sections/Nodum'
 import { Faq } from '@/components/sections/Faq'
 import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/sections/Footer'
@@ -26,6 +31,11 @@ export default function Home() {
       <ReservationModes />
       <Voices />
       <About />
+      <GreenByDesign />
+      <EnergyCluster />
+      <EuAcceleration />
+      <ComputeLayer />
+      <Nodum />
       <Faq />
       <Contact />
       <Footer />
