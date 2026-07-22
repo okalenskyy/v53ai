@@ -57,7 +57,7 @@ export const FAQ: FaqItem[] = [
   {
     question: 'Who is behind V53?',
     answer:
-      'V53 is operated by MCPV, the entity building and running the cluster infrastructure. NODUM AI Competence Hub is the applied AI engineering arm in the same family. Together they form the V53 AI Cluster ecosystem.',
+      'V53 is developed by Resilient Group, the company with extensive experience in renewable energy infrastructure and digital innovation.',
   },
   {
     question: 'How do I get started?',

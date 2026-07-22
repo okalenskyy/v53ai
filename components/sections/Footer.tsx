@@ -1,4 +1,4 @@
-import { EMAIL, ENTITY, LINKEDIN_URL } from '@/content/site'
+import { EMAIL, LINKEDIN_URL } from '@/content/site'
 
 export function Footer() {
   return (
@@ -14,7 +14,6 @@ export function Footer() {
             V53 AI Cluster, next generation AI compute for Europe&apos;s digital
             economy.
           </p>
-          <p className="footer__operated">Operated by {ENTITY.operatedBy}</p>
         </div>
 
         <div className="footer__cols">
@@ -71,8 +70,8 @@ export function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <span>© {new Date().getFullYear()} V53 AI Cluster · MCPV. All rights reserved.</span>
-        <span>Infra enabling AI</span>
+        <span>© {new Date().getFullYear()} V53 AI Cluster. All rights reserved.</span>
+        <span>INFRA ENABLING AI</span>
       </div>
     </footer>
   )
