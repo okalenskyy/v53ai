@@ -58,3 +58,7 @@ infra/*.tfvars
 
 # Local design source assets (large originals, not shipped)
 design-assets/
+
+# Local manual-deploy bundle (static export copy, not shipped via git)
+deploy/
+deploy.zip
