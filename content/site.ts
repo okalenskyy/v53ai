@@ -27,6 +27,13 @@ export const EMAIL = 'team@v53ai.eu'
 /** LinkedIn company page. Empty string hides the link until supplied. */
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/v53cloud'
 
+/** Registered office address. Shown on the contact map panel. */
+export const ADDRESS = 'Achteromstraat 11A, Weesp, 1381AV'
+
+/** Google Maps deep link for the office address (used by the contact map link). */
+export const MAPS_URL =
+  'https://maps.google.com/?q=Achteromstraat%2011A%2C%201381AV%20Weesp%2C%20Netherlands'
+
 /**
  * Legal entity (imprint + Organization schema). Values marked TODO(entity)
  * are release blockers for the legal go-live only (ADR-0005).

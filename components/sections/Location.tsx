@@ -1,4 +1,5 @@
 import { NLMap } from '@/components/sections/NLMap'
+import { MapCities } from '@/components/sections/MapCities'
 
 // Groningen / Veendam position in the map's 0 0 1024 1024 coordinate space.
 const PIN_X = 792
@@ -47,6 +48,7 @@ export function Location() {
               aria-label="Map of the Netherlands with the Groningen region marked"
             >
               <NLMap />
+              <MapCities exclude={['Groningen']} />
               {/* crosshair through the pin */}
               <line className="map__cross" x1={PIN_X} y1="0" x2={PIN_X} y2="1024" />
               <line className="map__cross" x1="0" y1={PIN_Y} x2="1024" y2={PIN_Y} />
