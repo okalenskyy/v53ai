@@ -750,6 +750,14 @@ body {
   fill: rgba(255,255,255,0.72); font-family: var(--font-mono);
   font-size: 21px; font-weight: 500; letter-spacing: 0.03em;
 }
+.map__facility-label {
+  fill: #fff; font-family: var(--font-display); font-weight: 700;
+  font-size: 23px; letter-spacing: -0.01em;
+}
+.map__facility-coord {
+  fill: rgba(255,255,255,0.6); font-family: var(--font-mono);
+  font-size: 18px; letter-spacing: 0.06em;
+}
 @keyframes map-pulse {
   0% { transform: scale(0.55); opacity: 0.7; }
   100% { transform: scale(1.6); opacity: 0; }
