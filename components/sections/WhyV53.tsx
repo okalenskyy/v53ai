@@ -8,7 +8,7 @@ export function WhyV53() {
         <h2 className="section-title reveal rd-1" id="why-heading">
           Built for the
           <br />
-          hard questions.
+          questions that matter.
         </h2>
         <span className="amber-rule reveal rd-2" aria-hidden="true" />
       </div>

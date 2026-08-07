@@ -6,16 +6,14 @@ export type Point = { label: string; text: string }
 
 export const INFRA_INTRO = {
   label: 'Infrastructure',
-  heading: 'Sovereign AI infrastructure, green by design.',
+  heading: 'Greenfield, resilient by design.',
   lead: [
-    'V53 is a greenfield AI cluster engineered from the ground up around energy, bringing renewables, green hydrogen and intelligent energy optimisation together with sovereign compute capacity and the conditions to meet growing demand.',
+    'Greenfield means we begin with a blank site and design the whole system, power, cooling, hydrogen, heat reuse and compute, as a single architecture rather than retrofitting an existing building. Every element is specified against European acceleration zone criteria from the start. V53 is a greenfield AI cluster engineered from the ground up around energy, bringing renewables, green hydrogen and intelligent energy optimisation together with sovereign compute capacity and the conditions to meet growing demand.',
     'It is an integrated energy and compute cluster, designed from first principles to meet Europe’s emerging requirements for large scale AI infrastructure: sovereign, efficient and sustainable by design. Alongside it, the NODUM AI Competence Hub converts client requirements into regional capability and supports them along the journey.',
   ],
 }
 
 export const GREENFIELD = {
-  heading: 'Greenfield, resilient by design.',
-  lead: 'Greenfield means we begin with a blank site and design the whole system, power, cooling, hydrogen, heat reuse and compute, as a single architecture rather than retrofitting an existing building. Every element is specified against European acceleration zone criteria from the start.',
   points: [
     {
       label: 'One integrated architecture',
@@ -34,7 +32,7 @@ export const GREENFIELD = {
 
 export const ENERGY_CLUSTER = {
   label: 'Energy',
-  heading: 'An energy cluster, not just a data centre.',
+  heading: 'An energy cluster.',
   lead: 'The scarce resource in AI is not land or servers, it is clean, reliable power. V53 is built around a power hub that brings renewables, green hydrogen and energy optimisation into one system, designed to strengthen the regional grid rather than strain it.',
   points: [
     {
@@ -64,7 +62,7 @@ export type EuCard = { label: string; text: string; note?: string }
 
 export const EU_ZONES = {
   label: 'EU acceleration zones',
-  heading: 'Built to meet EU acceleration zone requirements.',
+  heading: 'Built to meet EU Data Centre acceleration zone requirements.',
   lead: 'Europe is reshaping how large scale AI infrastructure is planned, powered and governed. V53 is designed to align with that framework from the outset.',
   cards: [
     {

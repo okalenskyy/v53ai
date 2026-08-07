@@ -5,12 +5,6 @@ import { MapCities } from '@/components/sections/MapCities'
 const PIN_X = 792
 const PIN_Y = 202
 
-const FACTS: { label: string; text: string }[] = [
-  { label: 'Grid power', text: 'Abundant grid capacity in the northern Netherlands, sized for dense GPU and HPC loads.' },
-  { label: 'Fibre', text: 'Dense connectivity into the European backbone, low latency to major hubs.' },
-  { label: 'Room to scale', text: 'Land and power headroom for a phased buildout beyond the 2027 MVP.' },
-]
-
 export function Location() {
   return (
     <section className="location" id="location" aria-labelledby="location-heading">
@@ -27,14 +21,6 @@ export function Location() {
             V53 sits in the Groningen region, where grid power, fibre and a stable EU
             jurisdiction meet. The physical ground under a sovereign digital backbone.
           </p>
-          <dl className="location__facts reveal rd-3">
-            {FACTS.map((f) => (
-              <div className="location__fact" key={f.label}>
-                <dt>{f.label}</dt>
-                <dd>{f.text}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
         <div className="location__map reveal rd-2">

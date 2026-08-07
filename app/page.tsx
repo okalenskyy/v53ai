@@ -31,8 +31,8 @@ export default function Home() {
       <Voices />
       <About />
       <GreenByDesign />
-      <EnergyCluster />
       <EuAcceleration />
+      <EnergyCluster />
       <ComputeLayer />
       <Nodum />
       <Services />

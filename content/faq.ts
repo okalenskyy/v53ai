@@ -5,29 +5,14 @@ export type FaqItem = {
 
 export const FAQ: FaqItem[] = [
   {
-    question: 'What is V53 AI Cluster?',
-    answer:
-      'V53 is a next generation AI Compute Cluster being built in the Groningen region. It exists to give European AI builders, researchers and enterprises an industrial grade place to run training, inference and high performance computing workloads. MVP compute goes live in 2027.',
-  },
-  {
     question: 'When can I start using V53 compute?',
     answer:
       'MVP compute is scheduled to go live in 2027. Forward capacity reservations are open today. Talk to us early and we will reserve dedicated nodes and a ramp schedule aligned with your roadmap.',
   },
   {
-    question: 'Why Groningen?',
-    answer:
-      'The Groningen region combines abundant grid power, fibre infrastructure and a stable EU jurisdiction. That mix lets V53 scale dense GPU and HPC capacity without the power, network or regulatory bottlenecks that constrain most European sites.',
-  },
-  {
     question: 'What workloads is V53 designed for?',
     answer:
       'Large scale AI training, foundation model work and fine tuning, production inference at scale, scientific HPC, and sovereign hosting for regulated workloads. If a job has outgrown standard cloud quotas, V53 is designed for it.',
-  },
-  {
-    question: 'What does EU sovereign actually mean here?',
-    answer:
-      'Your data and compute stay inside EU jurisdiction by default. No US extra territorial reach, no cross border data transfers without explicit consent, and audit trails that meet GDPR, EU AI Act and sectoral requirements out of the box.',
   },
   {
     question: 'Can I reserve capacity before 2027?',

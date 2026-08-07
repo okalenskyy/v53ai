@@ -357,7 +357,7 @@ body {
 .hero__headline .accent { color: var(--amber); }
 .hero__sub {
   font-size: clamp(16px, 1.55vw, 19px); line-height: 1.65;
-  color: var(--hero-muted); max-width: 560px; margin-bottom: 44px;
+  color: #fff; max-width: 560px; margin-bottom: 44px;
 }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 72px; align-items: center; }
 .hero__stats {
@@ -750,14 +750,6 @@ body {
   fill: rgba(255,255,255,0.72); font-family: var(--font-mono);
   font-size: 21px; font-weight: 500; letter-spacing: 0.03em;
 }
-.map__facility-label {
-  fill: #fff; font-family: var(--font-display); font-weight: 700;
-  font-size: 23px; letter-spacing: -0.01em;
-}
-.map__facility-coord {
-  fill: rgba(255,255,255,0.6); font-family: var(--font-mono);
-  font-size: 18px; letter-spacing: 0.06em;
-}
 @keyframes map-pulse {
   0% { transform: scale(0.55); opacity: 0.7; }
   100% { transform: scale(1.6); opacity: 0; }
@@ -765,27 +757,6 @@ body {
 .map-panel__label { position: absolute; left: 20px; bottom: 18px; display: flex; flex-direction: column; gap: 3px; }
 .map-panel__place { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: #fff; letter-spacing: -0.01em; }
 .map-panel__coord { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; }
-.map-panel__addr { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.68); letter-spacing: 0.06em; }
-.map-panel__link {
-  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-  color: var(--amber); text-decoration: none; text-transform: uppercase;
-  letter-spacing: 0.06em; margin-top: 2px; align-self: flex-start;
-}
-.map-panel__link:hover { color: var(--amber-hover); text-decoration: underline; }
-.map-panel__link:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
-
-/* Contact-section map: office location (Weesp). Panel floats on the blue band,
-   so it uses a translucent surface + amber accent bar rather than solid fill. */
-.contact__map { max-width: 1280px; margin: 56px auto 0; position: relative; z-index: 1; }
-.contact__map .map-panel {
-  aspect-ratio: 16 / 9;
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.14);
-}
-.contact__map .map-panel::before {
-  content: ''; position: absolute; top: 0; left: 0; z-index: 2;
-  width: 56px; height: 2px; background: var(--amber);
-}
 
 /* ─── Reservation modes ────────────────────────────────────── */
 .modes {

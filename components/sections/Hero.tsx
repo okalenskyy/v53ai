@@ -6,7 +6,7 @@ export function Hero() {
       <div className="hero__content">
         <div className="hero__eyebrow hero-anim ha-1" aria-hidden="true">
           <span className="hero__eyebrow-line" />
-          V53 AI Cluster · Groningen, NL
+          V53 AI Infrastructure Cluster · Groningen, NL
         </div>
 
         <h1 className="hero__headline hero-anim ha-2" id="hero-heading">

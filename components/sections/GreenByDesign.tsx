@@ -18,8 +18,6 @@ export function GreenByDesign() {
         </div>
 
         <div className="chapter__block reveal rd-2">
-          <h3 className="chapter__subhead">{GREENFIELD.heading}</h3>
-          <p className="chapter__sublead">{GREENFIELD.lead}</p>
           <div className="chapter__grid chapter__grid--3">
             {GREENFIELD.points.map((p) => (
               <article className="feature-card" key={p.label}>

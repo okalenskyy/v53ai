@@ -10,7 +10,7 @@ export function Services() {
             <h2 className="section-title reveal rd-1" id="services-heading">
               Industrial grade
               <br />
-              compute, ready
+              infrastructure, ready
               <br />
               for AI.
             </h2>

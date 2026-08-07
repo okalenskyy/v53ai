@@ -19,7 +19,7 @@ export const WHY_V53: Benefit[] = [
   },
   {
     num: '03',
-    question: 'Tired of cloud quotas that throttle at scale?',
+    question: 'Built for workloads that outgrow cloud quotas.',
     answer:
       'V53 is industrial grade capacity sized for sustained training, inference and HPC, not burst limits and surprise egress bills.',
   },
