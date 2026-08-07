@@ -2,7 +2,7 @@ const ITEMS = [
   'Reserving 2027 capacity',
   'Sovereign by design',
   'EU jurisdiction',
-  'Groningen, NL',
+  'Groningen Region, NL',
   'Industrial grade compute',
   'Training · Inference · HPC',
 ]

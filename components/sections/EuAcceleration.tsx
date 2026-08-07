@@ -2,7 +2,7 @@ import { EU_ZONES } from '@/content/infrastructure'
 
 export function EuAcceleration() {
   return (
-    <section className="chapter chapter--white" id="eu-zones" aria-labelledby="eu-heading">
+    <section className="chapter chapter--cloud" id="eu-zones" aria-labelledby="eu-heading">
       <div className="chapter__inner">
         <div className="chapter__head">
           <span className="section-label reveal">{EU_ZONES.label}</span>

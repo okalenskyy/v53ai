@@ -10,7 +10,7 @@ export const SITE_NAME = 'V53 AI Cluster'
 
 /** One-line site description. Reused by metadata (title/OG/Twitter) and Organization schema. */
 export const SITE_DESCRIPTION =
-  'V53 is a next generation AI Compute Cluster in the Groningen region, delivering sovereign, industrial grade training, inference and HPC capacity for Europe. MVP compute goes live in 2027.'
+  'V53 is a next generation AI Compute Cluster in the Groningen Region, delivering sovereign, industrial grade training, inference and HPC capacity for Europe. MVP compute goes live in 2027.'
 
 /** Title used across metadata and OG. */
 export const SITE_TITLE = 'V53 AI Cluster, computing capacity for the EU digital economy'

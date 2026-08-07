@@ -14,11 +14,11 @@ export function Location() {
           <h2 className="section-title reveal rd-1" id="location-heading">
             Anchored in
             <br />
-            Groningen.
+            Groningen Region.
           </h2>
           <span className="amber-rule reveal rd-2" aria-hidden="true" />
           <p className="location__lead reveal rd-2">
-            V53 sits in the Groningen region, where grid power, fibre and a stable EU
+            V53 sits in the Groningen Region, where grid power, fibre and a stable EU
             jurisdiction meet. The physical ground under a sovereign digital backbone.
           </p>
         </div>
@@ -31,7 +31,7 @@ export function Location() {
               viewBox="0 0 1024 1024"
               preserveAspectRatio="xMidYMid meet"
               role="img"
-              aria-label="Map of the Netherlands with the Groningen region marked"
+              aria-label="Map of the Netherlands with the Groningen Region marked"
             >
               <NLMap />
               <MapCities exclude={['Groningen']} />
@@ -44,7 +44,7 @@ export function Location() {
               <circle className="map__pin-core" cx={PIN_X} cy={PIN_Y} r="7" />
             </svg>
             <div className="map-panel__label">
-              <span className="map-panel__place">Groningen · Veendam</span>
+              <span className="map-panel__place">Groningen Region · Veendam</span>
               <span className="map-panel__coord">53.1°N · 6.9°E</span>
             </div>
           </div>

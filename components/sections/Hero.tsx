@@ -6,7 +6,7 @@ export function Hero() {
       <div className="hero__content">
         <div className="hero__eyebrow hero-anim ha-1" aria-hidden="true">
           <span className="hero__eyebrow-line" />
-          V53 AI Infrastructure Cluster · Groningen, NL
+          V53 AI Infrastructure Cluster · Groningen Region, NL
         </div>
 
         <h1 className="hero__headline hero-anim ha-2" id="hero-heading">
@@ -14,7 +14,7 @@ export function Hero() {
         </h1>
 
         <p className="hero__sub hero-anim ha-3">
-          V53 is a next generation AI Compute Infra Cluster in the Groningen region, a
+          V53 is a next generation AI Compute Infra Cluster in the Groningen Region, a
           critical building block of Europe’s digital backbone. Industrial grade capacity
           for large scale AI and HPC: scalable, demand ready and sovereign by design.
         </p>

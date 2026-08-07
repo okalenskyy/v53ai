@@ -59,7 +59,7 @@ export function About() {
             </div>
             <div className="about__pillar">
               <div className="about__pillar-label">Strategically located</div>
-              <div className="about__pillar-text">Groningen: dark fibre and a clear path to scale.</div>
+              <div className="about__pillar-text">Groningen Region: dark fibre and a clear path to scale.</div>
             </div>
           </div>
         </div>

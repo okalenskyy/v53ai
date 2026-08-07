@@ -80,7 +80,7 @@ export const EU_ZONES = {
     },
     {
       label: 'Part of the European compute network',
-      text: 'Positioned to complement and interface with the region’s EuroHPC AI Factory in Groningen, extending sovereign compute capacity for enterprises, the public sector and research.',
+      text: 'Positioned to complement and interface with the region’s EuroHPC AI Factory in Groningen Region, extending sovereign compute capacity for enterprises, the public sector and research.',
     },
   ] as EuCard[],
 }

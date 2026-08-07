@@ -378,7 +378,7 @@ body {
 /* ─── Services ─────────────────────────────────────────────── */
 .services {
   padding: var(--section-py) var(--section-px);
-  background: var(--white);
+  background: var(--cloud);
   border-top: 1px solid var(--border-raw);
 }
 .services__head { max-width: 1280px; margin: 0 auto 56px; }
@@ -449,7 +449,7 @@ body {
 /* ─── About ────────────────────────────────────────────────── */
 .about {
   padding: var(--section-py) var(--section-px);
-  background: var(--white);
+  background: var(--cloud);
   border-top: 1px solid var(--border-raw);
 }
 .about__inner {
@@ -471,7 +471,7 @@ body {
   gap: 14px; margin-top: 36px;
 }
 .about__pillar {
-  background: var(--cloud); border: 1px solid var(--border-raw);
+  background: var(--white); border: 1px solid var(--border-raw);
   padding: 18px 20px; position: relative;
 }
 .about__pillar::before {
@@ -656,7 +656,7 @@ body {
 .rd-4 { transition-delay: 0.27s; }
 
 /* ─── Ticker (marquee) ─────────────────────────────────────── */
-.ticker {
+.ticker { /* white strip between the dark hero and the cloud About section */
   overflow: hidden; white-space: nowrap;
   background: var(--white);
   border-top: 1px solid var(--border-raw); border-bottom: 1px solid var(--border-raw);
@@ -674,7 +674,7 @@ body {
 /* ─── Why V53 ──────────────────────────────────────────────── */
 .why {
   padding: var(--section-py) var(--section-px);
-  background: var(--cloud); border-top: 1px solid var(--border-raw);
+  background: var(--white); border-top: 1px solid var(--border-raw);
 }
 .why__head { max-width: 1280px; margin: 0 auto 48px; }
 .why__grid {
@@ -761,7 +761,7 @@ body {
 /* ─── Reservation modes ────────────────────────────────────── */
 .modes {
   padding: var(--section-py) var(--section-px);
-  background: var(--cloud); border-top: 1px solid var(--border-raw);
+  background: var(--white); border-top: 1px solid var(--border-raw);
 }
 .modes__head {
   display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: end;
@@ -895,7 +895,7 @@ body {
 .feature-card__text { font-size: 14.5px; line-height: 1.65; color: var(--navy-mid); }
 .chapter--dark .feature-card__text { color: rgba(255,255,255,0.72); }
 
-.eu-card { background: var(--cloud); border: 1px solid var(--border-raw); padding: 28px 26px; }
+.eu-card { background: var(--white); border: 1px solid var(--border-raw); padding: 28px 26px; }
 .eu-card__label {
   font-family: var(--font-display); font-weight: 700; font-size: 19px;
   letter-spacing: -0.01em; color: var(--navy); margin-bottom: 10px; line-height: 1.25;

@@ -25,18 +25,18 @@ export default function Home() {
       <Nav />
       <Hero />
       <Ticker />
-      <WhyV53 />
-      <Location />
-      <ReservationModes />
-      <Voices />
       <About />
-      <GreenByDesign />
-      <EuAcceleration />
-      <EnergyCluster />
-      <ComputeLayer />
-      <Nodum />
+      <WhyV53 />
       <Services />
+      <ComputeLayer />
+      <GreenByDesign />
+      <EnergyCluster />
+      <EuAcceleration />
+      <Location />
+      <Nodum />
+      <ReservationModes />
       <Faq />
+      <Voices />
       <Contact />
       <Footer />
       <RevealObserver />

@@ -34,7 +34,7 @@ export function Contact() {
           <dl className="contact__panel-meta">
             <div className="contact__panel-meta-row">
               <dt>Location</dt>
-              <dd>Groningen region, Netherlands</dd>
+              <dd>Groningen Region, Netherlands</dd>
             </div>
             <div className="contact__panel-meta-row">
               <dt>MVP</dt>
